@@ -18,5 +18,5 @@ app.get('*', (req, res) => {
   return res.send(response)
 })
 
-app.listen(3002, '0.0.0.0', () => console.log('App listening at http://%s:%s', os.hostname(), 3002))
+app.listen(3003, '0.0.0.0', () => console.log('App listening at http://%s:%s', os.hostname(), 3003))
 
