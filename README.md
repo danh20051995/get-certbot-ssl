@@ -8,7 +8,7 @@
 
 ### Install certbot
 
-```
+```bash
   sudo add-apt-repository ppa:certbot/certbot
   sudo apt-get update
   sudo apt-get install certbot
@@ -18,7 +18,7 @@
 
 - [Github](https://github.com/danh20051995/get-certbot-ssl)
 
-```
+```bash
   git clone https://github.com/danh20051995/get-certbot-ssl
   cd ./get-certbot-ssl
   npm i
@@ -35,3 +35,13 @@
 - Restart nginx service
 - Run: `certbot certonly --webroot --webroot-path=<root_directory> -d <your_domain>`
 - Update `./https-sample.nginx` `<your_domain>` and add into nginx config
+
+### Get standalone ssl
+
+- Config your DNS to serve first
+
+```bash
+  sudo service nginx stop
+  certbot certonly --standalone -d <domain>
+  sudo service nginx restart
+```
