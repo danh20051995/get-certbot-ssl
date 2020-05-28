@@ -35,6 +35,8 @@
 - Restart nginx service
 - Run: `certbot certonly --webroot --webroot-path=<root_directory> -d <your_domain>`
 - Update `./https-sample.nginx` `<your_domain>` and add into nginx config
+- Example get one ssl for multiple domains: `sudo certbot certonly --webroot --webroot-path="/path/to/get-certbot-ssl" -d yourdomain.com -d www.yourdomain.com -d api.yourdomain.com -d admin.yourdomain.com`
+- Example renew all ssl: `sudo certbot renew --webroot-path="/path/to/get-certbot-ssl"`
 
 ### Get standalone ssl
 
