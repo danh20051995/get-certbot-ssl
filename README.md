@@ -47,3 +47,8 @@
   certbot certonly --standalone -d <domain>
   sudo service nginx restart
 ```
+- Run renew with hook
+
+```bash
+sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
+```
