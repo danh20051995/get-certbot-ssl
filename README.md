@@ -51,10 +51,10 @@
 - Run renew
 
 ```bash
-  service nginx stop
+  sudo service nginx stop
   sudo certbot renew --standalone # renew all ssl
   sudo certbot renew --standalone -d <domain> # renew specific by domain
-  service nginx start
+  sudo service nginx start
 ```
 
 - Run renew with hook
