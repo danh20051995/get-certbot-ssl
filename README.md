@@ -1,10 +1,11 @@
 # Use guide
 
 ## Install requirement
-  - [git](https://git-scm.com/)
-  - [nodejs](https://nodejs.org)
-  - [npm](https://www.npmjs.com/)
-  - [nginx](https://www.nginx.com/)
+
+- [git](https://git-scm.com/)
+- [nodejs](https://nodejs.org)
+- [npm](https://www.npmjs.com/)
+- [nginx](https://www.nginx.com/)
 
 ### Install certbot
 
@@ -44,7 +45,7 @@
 
 ```bash
   sudo service nginx stop
-  certbot certonly --standalone -d <domain>
+  sudo certbot certonly --standalone -d <domain>
   sudo service nginx restart
 ```
 
@@ -52,14 +53,16 @@
 
 ```bash
   sudo service nginx stop
-  sudo certbot renew --standalone # renew all ssl
-  sudo certbot renew --standalone -d <domain> # renew specific by domain
+  # renew all ssl
+  sudo certbot renew --standalone
+  # renew specific by domain
+  sudo certbot renew --standalone -d <domain>
   sudo service nginx start
 ```
 
 - Run renew with hook
 
 ```bash
-sudo certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
-sudo certbot renew --standalone --pre-hook "service nginx stop" --post-hook "service nginx start"
+# sudo certbot renew --pre-hook "sudo service nginx stop" --post-hook "sudo service nginx start"
+sudo certbot renew --standalone --pre-hook "sudo service nginx stop" --post-hook "sudo service nginx start"
 ```
